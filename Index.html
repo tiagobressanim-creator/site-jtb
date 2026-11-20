@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags Institucionais -->
+    <title>Jorge Tiago Bressanim | Advocacia & Consultoria</title>
+    <meta name="description" content="Jorge Tiago Bressanim — Advocacia & Consultoria. Atuação ética e estratégica em Direito Trabalhista, Direito Civil e Contratual, Consultoria Jurídica Empresarial e Direito Tributário. Atendimento presencial em Barra Bonita, Jaú, Mineiros do Tietê e online em todo o Brasil.">
+    <meta name="keywords" content="Jorge Tiago Bressanim, Advogado Barra Bonita, Advogado Jaú, Advogado Mineiros do Tietê, Direito Trabalhista, Direito Civil e Contratual, Consultoria Jurídica Empresarial, Direito Tributário, Advocacia SP">
+    <meta name="author" content="Jorge Tiago Bressanim">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Compartilhamento Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Jorge Tiago Bressanim | Advocacia & Consultoria">
+    <meta property="og:description" content="Rigor técnico-jurídico aliado à visão estratégica de gestão. Atendimento presencial em Barra Bonita, Jaú, Mineiros do Tietê e região, e online em todo o Brasil.">
+    <meta property="og:site_name" content="Jorge Tiago Bressanim — Advocacia & Consultoria">
+
+    <!-- Dados Estruturados JSON-LD (LegalService) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Jorge Tiago Bressanim — Advocacia & Consultoria",
+      "description": "Assessoria e consultoria jurídica pautadas pela ética profissional e rigor técnico em Direito Trabalhista, Direito Civil e Contratual, Consultoria Jurídica Empresarial e Planejamento Tributário.",
+      "telephone": "+55-14-99723-7797",
+      "areaServed": [
+        { "@type": "City", "name": "Barra Bonita" },
+        { "@type": "City", "name": "Jaú" },
+        { "@type": "City", "name": "Mineiros do Tietê" },
+        { "@type": "Country", "name": "Brasil" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barra Bonita",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Jorge Tiago Bressanim",
+        "jobTitle": "Advogado e Administrador de Empresas"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cinzel, Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuração de Design Tokens (Clássico Jurídico) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#07101D',
+                            900: '#0B192C',
+                            800: '#132640',
+                            700: '#1D3557',
+                        },
+                        gold: {
+                            400: '#D4B36E',
+                            500: '#C5A059',
+                            600: '#A88440',
+                        },
+                        ivory: {
+                            50: '#FAF8F5',
+                            100: '#F3EFE8',
+                            200: '#E6DFD3',
+                        },
+                        charcoal: '#1E242B',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF8F5;
+            color: #1E242B;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Textura arquitetônica sutil no Hero */
+        .architectural-grid {
+            background-image: 
+                linear-gradient(to right, rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+
+        /* Moldura interna refinada para o monograma JTB */
+        .monogram-emblem {
+            position: relative;
+        }
+        .monogram-emblem::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            pointer-events: none;
+        }
+
+        /* Animação suave de entrada ao rolar */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Transição do Acordeão FAQ */
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+        .faq-answer.open {
+            grid-template-rows: 1fr;
+        }
+        .faq-answer-inner {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body id="inicio" class="antialiased selection:bg-gold-500/25 selection:text-navy-900">
+
+    <!-- 1. NAVBAR INSTITUCIONAL -->
+    <header id="navbar" class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-gold-500/25 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            
+            <!-- Identidade Visual: Monograma JTB + Nome + Subtítulo -->
+            <a href="#inicio" class="flex items-center gap-3.5 group focus:outline-none">
+                <div class="monogram-emblem w-12 h-12 bg-navy-950 border border-gold-500 flex items-center justify-center shrink-0 rounded-sm transition-transform duration-300 group-hover:scale-[1.03]">
+                    <span class="font-cinzel font-bold text-gold-500 text-lg tracking-widest">JTB</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-cinzel font-semibold text-ivory-50 text-sm sm:text-base lg:text-lg tracking-[0.14em] leading-tight">
+                        JORGE TIAGO BRESSANIM
+                    </span>
+                    <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5">
+                        <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">
+                            Advocacia &amp; Consultoria
+                        </span>
+                        <span class="hidden sm:inline text-gold-500/40 text-xs">•</span>
+                        <span class="text-[10px] sm:text-[11px] font-cinzel tracking-[0.15em] text-ivory-100/75">
+                            OAB/SP 526.657
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav aria-label="Navegação principal" class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-ivory-100/85">
+                <a href="#sobre" class="hover:text-gold-500 transition-colors py-1">Sobre</a>
+                <a href="#atuacao" class="hover:text-gold-500 transition-colors py-1">Áreas de Atuação</a>
+                <a href="#atendimento" class="hover:text-gold-500 transition-colors py-1">Atendimento</a>
+                <a href="#faq" class="hover:text-gold-500 transition-colors py-1">Dúvidas Frequentes</a>
+                <a href="#contato" class="hover:text-gold-500 transition-colors py-1">Contato</a>
+                <a href="https://wa.me/5514997237797?text=Ol%C3%A1%2C%20Dr.%20Jorge%20Tiago.%20Gostaria%20de%20informar-me%20sobre%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener noreferrer" class="ml-1 px-5 py-2.5 border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-navy-950 rounded-sm text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300">
+                    WhatsApp
+                </a>
+            </nav>
+
+            <!-- Botão Menu Mobile -->
+            <button type="button" onclick="toggleMobileMenu()" id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir menu de navegação" class="lg:hidden p-2.5 text-ivory-50 hover:text-gold-500 transition-colors rounded-sm">
+                <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Mobile Responsivo -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-navy-950 border-t border-gold-500/20 px-6 py-6 space-y-4 shadow-2xl">
+            <div class="pb-3 border-b border-gold-500/15 flex items-center justify-between text-xs text-gold-500 font-cinzel tracking-widest">
+                <span>INSCRIÇÃO PROFISSIONAL</span>
+                <span>OAB/SP 526.657</span>
+            </div>
+            <nav aria-label="Navegação mobile" class="flex flex-col space-y-2">
+                <a href="#inicio" onclick="closeMobileMenu()" class="text-sm font-medium text-ivory-100/90 hover:text-gold-500 py-2">Início</a>
+                <a href="#sobre" onclick="closeMobileMenu()" class="text-sm font-medium text-ivory-100/90 hover:text-gold-500 py-2">Sobre o Advogado</a>
+                <a href="#atuacao" onclick="closeMobileMenu()" class="text-sm font-medium text-ivory-100/90 hover:text-gold-500 py-2">Áreas de Atuação</a>
+                <a href="#atendimento" onclick="closeMobileMenu()" class="text-sm font-medium text-ivory-100/90 hover:text-gold-500 py-2">Abrangência de Atendimento</a>
+                <a href="#faq" onclick="closeMobileMenu()" class="text-sm font-medium text-ivory-100/90 hover:text-gold-500 py-2">Dúvidas Frequentes</a>
+                <a href="#contato" onclick="closeMobileMenu()" class="text-sm font-medium text-ivory-100/90 hover:text-gold-500 py-2">Contato</a>
+            </nav>
+            <div class="pt-3 border-t border-gold-500/15">
+                <a href="https://wa.me/5514997237797?text=Ol%C3%A1%2C%20Dr.%20Jorge%20Tiago.%20Gostaria%20de%20informar-me%20sobre%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" class="flex items-center justify-center gap-2 w-full py-3.5 bg-gold-500 text-navy-950 rounded-sm text-xs uppercase tracking-[0.15em] font-bold">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    Atendimento via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section class="relative bg-navy-900 text-ivory-50 architectural-grid border-b border-gold-500/25 overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-950/65 to-transparent pointer-events-none"></div>
+            <div class="hidden lg:block absolute top-14 right-14 w-80 h-80 border border-gold-500/15 pointer-events-none"></div>
+            <div class="hidden lg:block absolute top-20 right-20 w-80 h-80 border border-gold-500/10 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-36 relative z-10">
+                <div class="max-w-3xl">
+                    <div class="inline-flex flex-wrap items-center gap-3 mb-7">
+                        <span class="h-[1px] w-10 bg-gold-500"></span>
+                        <span class="text-xs uppercase tracking-[0.22em] text-gold-500 font-semibold">
+                            Jorge Tiago Bressanim • Advocacia &amp; Consultoria
+                        </span>
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-semibold leading-[1.15] tracking-tight text-ivory-50 mb-7">
+                        Rigor técnico-jurídico aliado à visão estratégica de gestão.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-ivory-100/80 leading-relaxed font-light mb-10 max-w-2xl">
+                        Assessoria e representação jurídica pautadas pela ética profissional, clareza técnica e atuação preventiva, integrando a formação em Direito à Administração de Empresas para pessoas físicas e organizações.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
+                        <a href="https://wa.me/5514997237797?text=Ol%C3%A1%2C%20Dr.%20Jorge%20Tiago.%20Gostaria%20de%20agendar%20um%20atendimento%20informativo." target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-gold-500 hover:bg-gold-400 text-navy-950 rounded-sm text-xs sm:text-sm uppercase tracking-[0.14em] font-bold flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-navy-950/40">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            Agendar Atendimento Informativo
+                        </a>
+                        <a href="#atuacao" class="px-7 py-4 border border-ivory-100/25 hover:border-gold-500 text-ivory-50 hover:text-gold-500 rounded-sm text-xs sm:text-sm uppercase tracking-[0.14em] font-medium flex items-center justify-center gap-2 transition-all duration-300">
+                            Áreas de Atuação
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Indicadores discretos de localização e registro -->
+                    <div class="mt-14 pt-8 border-t border-gold-500/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-ivory-100/75">
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="award" class="w-4 h-4 text-gold-500 shrink-0"></i>
+                            <span>Bacharel em Direito e Administração</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gold-500 shrink-0"></i>
+                            <span>Barra Bonita, Jaú, Mineiros do Tietê e região</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="globe" class="w-4 h-4 text-gold-500 shrink-0"></i>
+                            <span>Atendimento digital em todo o Brasil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SOBRE O ADVOGADO & FORMAÇÃO DUPLA -->
+        <section id="sobre" class="py-24 sm:py-28 bg-ivory-50 border-b border-ivory-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    
+                    <!-- Cartão Institucional -->
+                    <div class="lg:col-span-5 reveal">
+                        <div class="relative max-w-md mx-auto lg:mx-0">
+                            <div class="absolute -top-3 -left-3 w-full h-full border border-gold-500/60 rounded-sm pointer-events-none"></div>
+                            
+                            <div class="relative bg-navy-900 border border-gold-500/30 rounded-sm p-8 sm:p-10 text-ivory-50 shadow-xl">
+                                <div class="aspect-[4/5] w-full bg-navy-800 border border-gold-500/25 rounded-sm flex flex-col items-center justify-center p-6 text-center mb-6 relative overflow-hidden">
+                                    <div class="monogram-emblem w-20 h-20 bg-navy-950 border border-gold-500 rounded-sm flex items-center justify-center mb-5">
+                                        <span class="font-cinzel font-bold text-gold-500 text-2xl tracking-widest">JTB</span>
+                                    </div>
+                                    <p class="font-serif text-xl text-ivory-50">Jorge Tiago Bressanim</p>
+                                    <p class="text-xs uppercase tracking-[0.18em] text-gold-500 mt-1.5">Advocacia &amp; Consultoria</p>
+                                    <div class="w-12 h-[1px] bg-gold-500/40 my-5"></div>
+                                    <p class="text-xs text-ivory-100/80 leading-relaxed max-w-xs">
+                                        Bacharel em Direito e Administração de Empresas, com atuação dedicada à segurança jurídica, conformidade normativa e prevenção de litígios.
+                                    </p>
+                                </div>
+
+                                <div class="flex items-center justify-between pt-2 border-t border-gold-500/20 text-xs">
+                                    <span class="uppercase tracking-widest text-ivory-100/70">Inscrição Profissional</span>
+                                    <span class="font-cinzel font-semibold text-gold-500 tracking-wider">OAB/SP 526.657</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Texto Institucional -->
+                    <div class="lg:col-span-7 space-y-6 reveal">
+                        <div class="inline-flex items-center gap-3">
+                            <span class="h-[1px] w-8 bg-gold-500"></span>
+                            <span class="text-xs uppercase tracking-[0.2em] text-gold-600 font-bold">Perfil Profissional</span>
+                        </div>
+
+                        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900 leading-tight">
+                            Atuação pautada na ética, transparência e precisão técnica.
+                        </h2>
+
+                        <div class="space-y-4 text-base text-charcoal/85 leading-relaxed">
+                            <p>
+                                <strong>Jorge Tiago Bressanim</strong> conduz sua prática jurídica com foco na análise criteriosa de cada demanda, oferecendo orientação fundamentada e acessível tanto na esfera preventiva e consultiva quanto no contencioso administrativo e judicial.
+                            </p>
+                            <p>
+                                Sua formação como <strong>Bacharel em Direito e Administração de Empresas</strong> proporciona uma compreensão integrada entre o ordenamento jurídico e os impactos organizacionais, contratuais e financeiros que envolvem as relações de trabalho, os negócios civis e o planejamento tributário.
+                            </p>
+                            <p>
+                                Cada atendimento é realizado diretamente pelo profissional, assegurando sigilo absoluto, análise documental individualizada e estrita observância ao Código de Ética e Disciplina da Ordem dos Advogados do Brasil.
+                            </p>
+                        </div>
+
+                        <!-- Pilares de Formação -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-ivory-200">
+                            <div clao
